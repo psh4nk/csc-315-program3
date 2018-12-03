@@ -45,7 +45,7 @@ void defineBox( house *face )
 
     face[1].point[2].x =  1.0;
     face[1].point[2].y = -1.0;
-    face[1].point[2].z =  1.0; 
+    face[1].point[2].z =  1.0;
     face[1].point[2].w =  1.0;
 
     face[1].point[3].x =  1.0;
@@ -87,15 +87,15 @@ void defineBox( house *face )
 
     face[3].point[0].x = -1.0;  // Back Side 
     face[3].point[0].y = -1.0;
-    face[3].point[0].z =  0.0; 
+    face[3].point[0].z =  0.0;
     face[3].point[0].w =  1.0;
 
     face[3].point[1].x = -1.0;
     face[3].point[1].y = -1.0;
-    face[3].point[1].z =  1.0;
+    face[3].point[1].z =  2.0; // was 1
     face[3].point[1].w =  1.0;
 
-    face[3].point[2].x = -1.0; 
+    face[3].point[2].x = -1.0;
     face[3].point[2].y =  0.0;
     face[3].point[2].z =  2.0; 
     face[3].point[2].w =  1.0;
@@ -107,7 +107,7 @@ void defineBox( house *face )
 
     face[3].point[4].x = -1.0;
     face[3].point[4].y =  1.0;
-    face[3].point[4].z =  0.0; 
+    face[3].point[4].z =  0.0;
     face[3].point[4].w =  1.0;
     //-------------------------------------------------------------
     
@@ -123,17 +123,17 @@ void defineBox( house *face )
 
     face[4].point[2].x =  1.0;
     face[4].point[2].y =  0.0;
-    face[4].point[2].z =  2.0; 
+    face[4].point[2].z =  2.0; // was 2
     face[4].point[2].w =  1.0;
 
     face[4].point[3].x =  1.0;
     face[4].point[3].y =  1.0;
-    face[4].point[3].z =  1.0; 
+    face[4].point[3].z =  1.0;
     face[4].point[3].w =  1.0;
 
     face[4].point[4].x =  1.0;
     face[4].point[4].y =  1.0;
-    face[4].point[4].z =  0.0; 
+    face[4].point[4].z =  0.0;
     face[4].point[4].w =  1.0;
     //----------------------------------------------------------------------
     
@@ -143,18 +143,18 @@ void defineBox( house *face )
     face[5].point[0].w =  1.0;
 
     face[5].point[1].x = -1.0;
-    face[5].point[1].y =  0.0;
-    face[5].point[1].z =  2.0;
+    face[5].point[1].y =  1.0;
+    face[5].point[1].z =  1.0;
     face[5].point[1].w =  1.0;
 
     face[5].point[2].x =  -1.0;
     face[5].point[2].y =  0.0;
-    face[5].point[2].z =  2.0; 
+    face[5].point[2].z =  2.0;
     face[5].point[2].w =  1.0;
 
     face[5].point[3].x =  1.0;
     face[5].point[3].y =  0.0;
-    face[5].point[3].z =  2.0; 
+    face[5].point[3].z =  2.0;
     face[5].point[3].w =  1.0;
 
     face[5].point[4].x =  1.0;
