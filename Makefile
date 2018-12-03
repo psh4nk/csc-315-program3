@@ -2,10 +2,10 @@
 #
 #
 
-CC = gcc
+CC = g++
 LDLIBS =  -lglut -lGL -lGLU -lm
 HEADERS = opengl.h structs.h globals.h constants.h prototypes.h
-OBJS = init.o defineBox.o drawBox.o drawAxes.o reshape.o display.o  
+OBJS = init.o defineBox.o drawBox.o drawAxes.o reshape.o display.o keyboard.o specialinput.o  
 
 debug ?= n
 ifeq ($(debug), y)
@@ -40,6 +40,12 @@ reshape.o : reshape.cc $(HEADERS)
 
 display.o : display.cc $(HEADERS)
 	$(CC) $(CFLAGS) display.cc -c
+
+keyboard.o : keyboard.cc $(HEADERS)
+	$(CC) $(CFLAGS) keyboard.cc -c
+
+specialinput.o : specialinput.cc $(HEADERS)
+	$(CC) $(CFLAGS) specialinput.cc -c
 
 clean:
 	rm *.o

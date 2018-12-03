@@ -32,7 +32,7 @@ void defineBox( house *face )
     face[0].point[4].z =  0.0;
     face[0].point[4].w =  1.0;
     ----------------------------------------------------------------
-        face[1].point[0].x = -1.0;  // Left Side
+    face[1].point[0].x = -1.0;  // Left Side
     face[1].point[0].y = -1.0;
     face[1].point[0].z =  0.0;
     face[1].point[0].w =  1.0;
@@ -83,7 +83,7 @@ void defineBox( house *face )
     face[2].point[4].w =  1.0;
     //------------------------------------------------------------  
 
-    //                                                                                                                                                                                                              face[3].point[0].x = -1.0;  // Back Side 
+    face[3].point[0].x = -1.0;  // Back Side 
     face[3].point[0].y = -1.0;
     face[3].point[0].z =  0.0;
     face[3].point[0].w =  1.0;
@@ -134,7 +134,7 @@ void defineBox( house *face )
     face[4].point[4].w =  1.0;
 
     //----------------------------------------------------------------------
-    face[5].point[0].x = -1.0;  // TopL 
+    face[5].point[0].x = -1.0;  // Top Left 
     face[5].point[0].y = -1.0;
     face[5].point[0].z =  1.0;
     face[5].point[0].w =  1.0;
@@ -159,7 +159,7 @@ void defineBox( house *face )
     face[5].point[4].z =  1.0;
     face[5].point[4].w =  1.0;
     //-----------------------------------------------------------------------
-    face[6].point[0].x =  1.0;  // Topr 
+    face[6].point[0].x =  1.0;  // Top Right 
     face[6].point[0].y =  1.0;
     face[6].point[0].z =  1.0;
     face[6].point[0].w =  1.0;
@@ -171,12 +171,12 @@ void defineBox( house *face )
 
     face[6].point[2].x =  -1.0;
     face[6].point[2].y =  0.0;
-    face[6].point[2].z =  2.0;
+    face[6].point[2].z =  2.0; 
     face[6].point[2].w =  1.0;
 
     face[6].point[3].x =  1.0;
     face[6].point[3].y =  0.0;
-    face[6].point[3].z =  2.0;
+    face[6].point[3].z =  2.0; 
     face[6].point[3].w =  1.0;
 
     face[6].point[4].x =  1.0;

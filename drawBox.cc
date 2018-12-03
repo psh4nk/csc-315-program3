@@ -17,7 +17,8 @@ void drawBox( struct house *face )
 
         glColor3f(face[j].color.red, face[j].color.green, face[j].color.blue);
 
-        glBegin(GL_POLYGON); // draw it filled. Will add flag here later
+        //glBegin(GL_POLYGON); // draw it filled. Will add flag here later
+        glBegin(GL_LINE_LOOP);
         for (i=0;i<5;i++){
             glVertex3f(face[j].point[i].x, face[j].point[i].y, face[j].point[i].z);
         }

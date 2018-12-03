@@ -5,6 +5,8 @@
 
 void init(void);
 void drawAxes(int );
+void keyboard(unsigned char, int , int);
+void specialinput(int, int, int);
 void defineBox( struct house* );
 void drawBox( struct house* );
 void display(void);
