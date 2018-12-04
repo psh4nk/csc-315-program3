@@ -7,17 +7,14 @@
 #include "globals.h"
 #include "constants.h"
 #include <iostream>
-//int drawaxis = 0;
 
 void onAxis(int msg){
     switch(msg){
         case 1:
-            drawaxis = 1;
-            std::cout << "axis should be on: " << drawaxis << std::endl;
+            setdrawaxis(1);
             break;
         case 2:
-            drawaxis = 0;
-            std::cout << "axis should be off: " << drawaxis << std::endl;
+            setdrawaxis(0);
             break;
     }
     glutPostRedisplay();

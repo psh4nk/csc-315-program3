@@ -4,11 +4,21 @@
 
 #include "opengl.h" 
 #include <iostream>
-void drawAxes(int length, int drawaxis)
+
+static int drawaxis;
+
+void setdrawaxis(int value){
+    drawaxis = value;
+}
+
+int getdrawaxis(){
+    return drawaxis;
+}
+
+void drawAxes(int length)
 {   
 
     /* This provides a coordinate axis about the origin. */
-    std::cout << "drawaxis: " << drawaxis << std::endl;
     if(drawaxis != 0){
         glPointSize(1.0);
         glBegin(GL_LINES);

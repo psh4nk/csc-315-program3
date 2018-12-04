@@ -7,6 +7,7 @@
 
 #include "prototypes.h"
 
+static int drawaxis = 0;
 
 void display(void)
 {
@@ -43,7 +44,7 @@ void display(void)
     glEnable(GL_DEPTH_TEST);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    drawAxes(5, drawaxis);
+    drawAxes(5);
 
     drawBox(&faces[0]);
     glFlush();

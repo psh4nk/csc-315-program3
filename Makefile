@@ -15,10 +15,10 @@ else
 endif
 
 
-all: perspective tags 
+all: main tags  
 
-perspective :	main.o $(OBJS) 
-	$(CC) $(CFLAGS) main.o $(OBJS) -o perspective $(LDLIBS)
+main :	main.o $(OBJS) 
+	$(CC) $(CFLAGS) main.o $(OBJS) -o main $(LDLIBS)
 
 main.o : main.cc $(HEADERS)
 	$(CC) $(CFLAGS) main.cc -c
