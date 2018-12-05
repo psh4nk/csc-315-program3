@@ -13,6 +13,9 @@ void setfill(int);
 int getfill();
 void defineHouse( struct house* );
 void drawHouse( struct house* );
+void setsignflag(int);
+int getsignflag();
+void drawSign();
 void display(void);
 void reshape (int , int );
 

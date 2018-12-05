@@ -43,10 +43,11 @@ void display(void)
 
     glEnable(GL_DEPTH_TEST);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+    
     drawAxes(5);
 
-    drawHouse(&faces[0]);
+    drawHouse(&faces[0]); 
+	glPopMatrix();
     glFlush();
 
 }
