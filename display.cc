@@ -4,7 +4,6 @@
 
 #include "opengl.h"
 #include "structs.h"
-
 #include "prototypes.h"
 
 static int drawaxis = 0;
@@ -39,13 +38,14 @@ void display(void)
 
     /* DO NOT MODIFY ANYTHING ELSE */
 
-    /* Draw a coordinate axis */
 
     glEnable(GL_DEPTH_TEST);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
+    /* Draw a coordinate axis */
     drawAxes(5);
 
+    /* Draw house + sign */
     drawHouse(&faces[0]); 
 	glPopMatrix();
     glFlush();
