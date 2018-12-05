@@ -9,8 +9,10 @@ int getdrawaxis();
 void drawAxes(int);
 void keyboard(unsigned char, int , int);
 void specialinput(int, int, int);
-void defineBox( struct house* );
-void drawBox( struct house* );
+void setfill(int);
+int getfill();
+void defineHouse( struct house* );
+void drawHouse( struct house* );
 void display(void);
 void reshape (int , int );
 

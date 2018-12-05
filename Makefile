@@ -5,7 +5,7 @@
 CC = g++
 LDLIBS =  -lglut -lGL -lGLU -lm
 HEADERS = opengl.h structs.h globals.h constants.h prototypes.h
-OBJS = init.o defineBox.o drawBox.o drawAxes.o reshape.o display.o keyboard.o specialinput.o  
+OBJS = init.o defineHouse.o drawHouse.o drawAxes.o reshape.o display.o keyboard.o specialinput.o  
 
 debug ?= n
 ifeq ($(debug), y)
@@ -26,11 +26,11 @@ main.o : main.cc $(HEADERS)
 init.o : init.cc $(HEADERS)
 	$(CC) $(CFLAGS) init.cc -c
 
-defineBox.o : defineBox.cc $(HEADERS)
-	$(CC) $(CFLAGS) defineBox.cc -c
+defineBox.o : defineHouse.cc $(HEADERS)
+	$(CC) $(CFLAGS) defineHouse.cc -c
 
-drawBox.o : drawBox.cc $(HEADERS)
-	$(CC) $(CFLAGS) drawBox.cc -c
+drawBox.o : drawHouse.cc $(HEADERS)
+	$(CC) $(CFLAGS) drawHouse.cc -c
 
 drawAxes.o : drawAxes.cc $(HEADERS)
 	$(CC) $(CFLAGS) drawAxes.cc -c
