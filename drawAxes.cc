@@ -1,4 +1,3 @@
-
 #ifndef DRAW_AXES
 #define DRAW_AXES
 

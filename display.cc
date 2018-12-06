@@ -1,4 +1,3 @@
-
 #ifndef DISPLAY
 #define DISPLAY
 
@@ -32,7 +31,7 @@ void display(void)
 
     // Now explicitly place the camera
 
-    gluLookAt (6.0, 5.0, 3.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+    gluLookAt (6.1+getzoom(), 5.1+getzoom(), 3.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
 
     /* DO NOT MODIFY ANYTHING ELSE */
 

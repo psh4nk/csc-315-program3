@@ -18,7 +18,7 @@ int getsignflag(){
 void drawSign(){
     if(signflag == 1){
         glColor3f(1.0,1.0,1.0);
-        char message[] = "HELLO WORLD";
+        char message[] = "HELLO WORLD!";
         if(signflag == 1){
             void *font = GLUT_STROKE_MONO_ROMAN;
             for(int i = 0; i < (int)strlen(message); i++)

@@ -73,6 +73,7 @@ int main(int argc, char** argv)
     glutInitWindowPosition (100, 100);
     glutCreateWindow (argv[0]);
     init ();
+    glutMouseFunc(mouse);
     glutKeyboardFunc(keyboard);
     glutSpecialFunc(specialinput);
     glEnable(GL_DEPTH_TEST);

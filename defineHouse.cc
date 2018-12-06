@@ -1,5 +1,5 @@
-#ifndef DEFINE_BOX
-#define DEFINE_BOX
+#ifndef DEFINE_HOUSE
+#define DEFINE_HOUSE
 
 #include "structs.h"
 
@@ -193,31 +193,31 @@ void defineHouse( house *face )
     // Define the colors
     //
     face[0].color.red   = 1.0;
-    face[0].color.green = 0.0;
+    face[0].color.green = 1.0;
     face[0].color.blue  = 0.0;
 
-    face[1].color.red   = 0.0;
-    face[1].color.green = 1.0;
-    face[1].color.blue  = 0.0;
+    face[1].color.red   = 0.2;
+    face[1].color.green = 0.5;
+    face[1].color.blue  = 1.0;
 
-    face[2].color.red   = 0.0;
-    face[2].color.green = 0.0;
-    face[2].color.blue  = 1.0;
+    face[2].color.red   = 0.8;
+    face[2].color.green = 0.7;
+    face[2].color.blue  = 0.3;
 
-    face[3].color.red   = 1.0;
-    face[3].color.green = 1.0;
-    face[3].color.blue  = 0.0;
+    face[3].color.red   = 0.5;
+    face[3].color.green = 0.0;
+    face[3].color.blue  = 0.5;
 
-    face[4].color.red   = 1.0;
-    face[4].color.green = 0.0;
+    face[4].color.red   = 0.3;
+    face[4].color.green = 0.9;
     face[4].color.blue  = 1.0;
 
-    face[5].color.red   = 0.0;
-    face[5].color.green = 1.0;
+    face[5].color.red   = 0.2;
+    face[5].color.green = 0.4;
     face[5].color.blue  = 1.0;
 
     face[6].color.red   = 1.0;
-    face[6].color.green = 1.0;
+    face[6].color.green = 0.5;
     face[6].color.blue  = 0.0;
 
 }

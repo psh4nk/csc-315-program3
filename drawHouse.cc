@@ -5,8 +5,10 @@
 #include "structs.h"
 #include "prototypes.h"
 #include <string.h>
+#include <iostream>
 
 static int fill = 0;
+static float xrotate = 0, yrotate = 0, zrotate = 0, deltax = 0, deltay = 0, deltaz =0;
 
 void setfill(int value){
     fill = value;
@@ -16,24 +18,68 @@ int getfill(){
     return fill;
 }
 
+void spinDisplay(){
+    xrotate = xrotate + deltax;
+    yrotate = yrotate + deltay;
+    zrotate = zrotate + deltaz;
+    if(xrotate > 360) 
+        xrotate = xrotate-360;
+    if(yrotate > 360) 
+        yrotate = yrotate-360;
+    if(zrotate > 360) 
+        zrotate = zrotate-360;
+    glutPostRedisplay();
+}
+
+void reset(){
+    xrotate = 0;
+    yrotate = 0;
+    zrotate = 0;
+    deltax = 0;
+    deltay = 0;
+    deltaz = 0;
+}
+void stoprotating(){
+    deltax = 0;
+    deltay = 0;
+    deltaz = 0;
+}
+
+void rotation(char axis, int direction){
+    // axis is either 'x', 'y', or 'z'
+    // direction is either 0 : + or 1 : -
+    if(axis == 'x')
+        if(direction == 0)
+            deltax += 1;
+        else if(direction == 1)
+            deltax -= 1;
+    if(axis == 'y')
+        if(direction == 0)
+            deltay += 1;
+        else if(direction == 1)
+            deltay -= 1;
+    if(axis == 'z')
+        if(direction == 0)
+            deltaz += 1;
+        else if(direction == 1)
+            deltaz -= 1;
+}
+
 
 void drawHouse( struct house *face ){
     int i, j;
-
-    glPushMatrix();
-    glScalef(face[4].point[0].x/550, face[4].point[1].x/270, face[4].point[2].x/400);
-    glRotatef(180.0,0.0,2.0,0.0);
-    glTranslatef(-200.0,0.0,-500.0);
-    glRotatef(240.0,1.0,0.0,0.0);
-    drawSign();
-    glPopMatrix();
 
     glPolygonMode(GL_FRONT, GL_FILL);
     glPolygonMode(GL_BACK, GL_FILL);
 
     glPushMatrix();
-
+    glTranslatef(0.0, 2.0, 1.0);
+    glRotatef(xrotate, 1.0, 0.0, 0.0);
+    glRotatef(yrotate, 0.0, 1.0, 0.0);
+    glRotatef(zrotate, 0.0, 0.0, 1.0);
+    glTranslatef(-1.0,-1.0,-1.0);
     // draw the house/barn
+    glPushMatrix();
     for(j=0;j<7;j++){ // one more side than the boxes had to account for front and back
 
 
@@ -50,10 +96,17 @@ void drawHouse( struct house *face ){
         }
         glEnd();
     }
-    glTranslatef(0,0,0);
+    glTranslatef(0.0,0.0,0.0);
 
     glPopMatrix();
 
+    glScalef(face[4].point[0].x/650, face[4].point[1].x/270, face[4].point[2].x/400);
+    glRotatef(180.0,0.0,1.0,0.0);
+    glTranslatef(-620.0,210.0,-500.0);
+    glRotatef(240.0,1.0,0.0,0.0);
+    drawSign();
+    glPopMatrix();
+    glPopMatrix();
     // draw what view type is selected in the top right corner
     if(getviewtype() == 0){
         // perspective selected
@@ -71,11 +124,7 @@ void drawHouse( struct house *face ){
     }
     else if(getviewtype() == 1){
         //ortho selected
-        glPushMatrix();
-        /*glScalef(.003,.003,.003);
-        glRotatef(35,0,1,0);
-        glRotatef(91,0,0,1);
-        glTranslatef(0,2500,0);*/
+        glPushMatrix(); 
         glScalef(.003,.003,.003);
         glRotatef(40,0,1,0);
         glRotatef(90,0,0,1);
@@ -95,6 +144,7 @@ void drawHouse( struct house *face ){
         glTranslatef(200,4300,0);
         glColor3f(1.0,0.0,1.0);
         char custom[] = "CUSTOM VIEW";
+        glRasterPos3f( 450.0f,500.0f, 0.0f );
         for(int i = 0; i < (int)strlen(custom); i++)
             glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, custom[i]);
         glPopMatrix();
