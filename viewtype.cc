@@ -42,7 +42,7 @@ void viewtype(){
     }
     else if(view == 2){
         // custom view selected
-        std::cout << "fovy: ";
+        /*std::cout << "fovy: ";
         std::cin >> fovy;
         std::cout << std::endl;
         std::cout << "aspect: ";
@@ -54,7 +54,7 @@ void viewtype(){
         std::cout << "zFar: ";
         std::cin >> f;
         std::cout << std::endl;
-        
+        */
         gluPerspective(fovy,aspect,n,f);
     }
 

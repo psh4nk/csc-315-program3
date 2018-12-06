@@ -72,13 +72,17 @@ void drawHouse( struct house *face ){
     else if(getviewtype() == 1){
         //ortho selected
         glPushMatrix();
-        glScalef(.003,.003,.003);
-        /*glRotatef(35,0,1,0);
+        /*glScalef(.003,.003,.003);
+        glRotatef(35,0,1,0);
         glRotatef(91,0,0,1);
-        glTranslatef(150,4300,0);*/
+        glTranslatef(0,2500,0);*/
+        glScalef(.003,.003,.003);
+        glRotatef(40,0,1,0);
+        glRotatef(90,0,0,1);
+        glTranslatef(400,4000,0);
         glColor3f(1.0,0.0,1.0);
         char orthographic[] = "ORTHOGRAPHIC";
-        glRasterPos3f( 500.0f , 500.0f ,0.0f );
+        glRasterPos3f( 50.0f,50.0f, 0.0f );
         for(int i = 0; i < (int)strlen(orthographic); i++)
             glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, orthographic[i]);
         glPopMatrix();
@@ -92,7 +96,7 @@ void drawHouse( struct house *face ){
         glColor3f(1.0,0.0,1.0);
         char custom[] = "CUSTOM VIEW";
         for(int i = 0; i < (int)strlen(custom); i++)
-            glutStrokeCharacter(GLUT_STROKE_MONO_ROMAN, custom[i]);
+            glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, custom[i]);
         glPopMatrix();
     }
 
