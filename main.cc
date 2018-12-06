@@ -44,11 +44,28 @@ void putSign(int msg){
     glutPostRedisplay();
 }   
 
+void useView(int msg){
+    switch(msg){
+        case 1:
+            setviewtype(0);
+            break;
+        case 2: 
+            setviewtype(1);
+            break;
+        case 3:
+            setviewtype(2);
+            break;
+    }
+    reshape(WINDOW_HEIGHT, WINDOW_WIDTH);
+    glutPostRedisplay();
+
+}
+
 void selfDestruct(int msg){}
 
 int main(int argc, char** argv)
 {
-    int menu, axis, fill, sign;
+    int menu, axis, fill, sign, view;
 
     glutInit(&argc, argv);
     glutInitDisplayMode (GLUT_DEPTH | GLUT_SINGLE | GLUT_RGB);
@@ -58,6 +75,7 @@ int main(int argc, char** argv)
     init ();
     glutKeyboardFunc(keyboard);
     glutSpecialFunc(specialinput);
+    glEnable(GL_DEPTH_TEST);
     glutDisplayFunc(display); 
     glutReshapeFunc(reshape);
 
@@ -70,12 +88,17 @@ int main(int argc, char** argv)
     sign = glutCreateMenu(putSign);
     glutAddMenuEntry("Place the sign", 1);
     glutAddMenuEntry("Remove the sign", 2);
+    view = glutCreateMenu(useView);
+    glutAddMenuEntry("Perspective", 1);
+    glutAddMenuEntry("Orthographic", 2);
+    glutAddMenuEntry("Custom view (pls enter in console", 3);
 
     // And now create the menu 
     menu = glutCreateMenu(selfDestruct);
     glutAddSubMenu("Axes", axis);
     glutAddSubMenu("Fill", fill);
     glutAddSubMenu("Sign", sign);
+    glutAddSubMenu("View", view);
 
     glutAttachMenu(GLUT_MIDDLE_BUTTON);
 

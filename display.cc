@@ -11,7 +11,6 @@ static int drawaxis = 0;
 void display(void)
 {
 
-    //struct box faces[6];
     struct house faces[7]; 
     float *M;
     int i, j;
@@ -34,7 +33,6 @@ void display(void)
     // Now explicitly place the camera
 
     gluLookAt (6.0, 5.0, 3.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
-
 
     /* DO NOT MODIFY ANYTHING ELSE */
 

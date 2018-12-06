@@ -18,6 +18,9 @@ int getsignflag();
 void drawSign();
 void display(void);
 void reshape (int , int );
+void setviewtype(int);
+int getviewtype();
+void viewtype();
 
 #endif
 
