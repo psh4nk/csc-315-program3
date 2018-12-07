@@ -18,6 +18,10 @@ int getviewtype(){
 }
 
 void viewtype(){
+    // specify view values for perspective 
+    // and orthographic, allow input for custom
+    // view values
+    
     float l,r,b,t,n,f,fovy,aspect,fw,fh;
     l = -1.0; r = 1.0;   // l=left, r=right
     b = -1.0; t = 1.0;   // b=bottom, t=top

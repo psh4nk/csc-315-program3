@@ -8,6 +8,9 @@
 #include "constants.h"
 #include <iostream>
 
+// code adapted from menuexample 
+// project from Dr. Pounds
+
 void onAxis(int msg){
     switch(msg){
         case 1:
@@ -58,14 +61,35 @@ void useView(int msg){
     }
     reshape(WINDOW_HEIGHT, WINDOW_WIDTH);
     glutPostRedisplay();
+}
 
+void resetAll(int msg){
+    switch(msg){
+
+        case 1:
+            reset();
+            setzoom(0);
+            setviewtype(0);
+            setsignflag(0);
+            glMatrixMode (GL_PROJECTION);
+            glLoadIdentity ();
+            viewtype();
+            glMatrixMode (GL_MODELVIEW);
+            glutPostRedisplay();
+            break;
+        case 2:
+           setsignflag(2);
+           char message[] = "";
+           drawSign(message); 
+        break; 
+    }
 }
 
 void selfDestruct(int msg){}
 
 int main(int argc, char** argv)
 {
-    int menu, axis, fill, sign, view;
+    int menu, axis, fill, sign, view, resetview;
 
     glutInit(&argc, argv);
     glutInitDisplayMode (GLUT_DEPTH | GLUT_SINGLE | GLUT_RGB);
@@ -80,6 +104,10 @@ int main(int argc, char** argv)
     glutDisplayFunc(display); 
     glutReshapeFunc(reshape);
 
+
+    resetview = glutCreateMenu(resetAll);
+    glutAddMenuEntry("Reset the object and reposition camera", 1);
+    glutAddMenuEntry("Do \"nothing\"", 2);
     axis = glutCreateMenu(onAxis);
     glutAddMenuEntry("On", 1);
     glutAddMenuEntry("Off", 2);
@@ -100,6 +128,7 @@ int main(int argc, char** argv)
     glutAddSubMenu("Fill", fill);
     glutAddSubMenu("Sign", sign);
     glutAddSubMenu("View", view);
+    glutAddSubMenu("Reset", resetview);
 
     glutAttachMenu(GLUT_MIDDLE_BUTTON);
 

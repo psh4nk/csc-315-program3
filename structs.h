@@ -2,6 +2,8 @@
 #ifndef STRUCTS
 #define STRUCTS
 
+// Most of this code was written by Dr. Pounds
+
 typedef struct vertex {
         float x;
         float y;

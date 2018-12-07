@@ -3,6 +3,7 @@
 
 #include "opengl.h"
 #include "prototypes.h"
+
 void keyboard( unsigned char key, int x, int y){
     switch(key){
         case 's':
@@ -19,11 +20,29 @@ void keyboard( unsigned char key, int x, int y){
             reset();
             setzoom(0);
             setviewtype(0);
+            setsignflag(0);
             glMatrixMode (GL_PROJECTION);
             glLoadIdentity ();
             viewtype();
 
             glMatrixMode (GL_MODELVIEW); 
+            glutPostRedisplay();
+            break;
+        case 'o':
+            // shortcut for orthographic so
+            // you don't have to use the menu
+            setviewtype(1);
+            glMatrixMode (GL_PROJECTION);
+            glLoadIdentity ();
+            viewtype();
+            glutPostRedisplay();
+            break;
+        case 'p':
+            // same as above but for perspective
+            setviewtype(0);
+            glMatrixMode (GL_PROJECTION);
+            glLoadIdentity ();
+            viewtype();
             glutPostRedisplay();
             break;
         case 'q':

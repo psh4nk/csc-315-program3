@@ -15,14 +15,14 @@ float getzoom(){
 
 void specialinput(int key, int x, int y){
     switch(key){
-        case '+':
         case GLUT_KEY_PAGE_UP:
-            //move camera closer
+            // move camera closer
+            // when page up pressed
             zoom-=.1;
             break;
-        case '-':
         case GLUT_KEY_PAGE_DOWN:
-            //move camera farther away
+            // move camera farther away
+            // when page down pressed
             zoom+=.1;
             break;
     }

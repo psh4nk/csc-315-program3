@@ -3,6 +3,8 @@
 
 #include "structs.h"
 
+// code adapted from defineHouse.cc 
+// by Dr. Pounds
 
 void defineHouse( house *face )
 {
@@ -196,13 +198,13 @@ void defineHouse( house *face )
     face[0].color.green = 1.0;
     face[0].color.blue  = 0.0;
 
-    face[1].color.red   = 0.2;
-    face[1].color.green = 0.5;
-    face[1].color.blue  = 1.0;
+    face[1].color.red   = 0.0;
+    face[1].color.green = 1.0;
+    face[1].color.blue  = 0.0;
 
-    face[2].color.red   = 0.8;
-    face[2].color.green = 0.7;
-    face[2].color.blue  = 0.3;
+    face[2].color.red   = 1.0;
+    face[2].color.green = 0.0;
+    face[2].color.blue  = 0.0;
 
     face[3].color.red   = 0.5;
     face[3].color.green = 0.0;

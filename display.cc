@@ -5,6 +5,9 @@
 #include "structs.h"
 #include "prototypes.h"
 
+// code adapted from display.cc
+// from Dr. Pounds 
+
 static int drawaxis = 0;
 
 void display(void)

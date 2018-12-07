@@ -7,6 +7,8 @@
 #include <string.h>
 #include <iostream>
 
+// code adapted from drawBox.cc from Dr. Pounds
+
 static int fill = 0;
 static float xrotate = 0, yrotate = 0, zrotate = 0, deltax = 0, deltay = 0, deltaz =0;
 
@@ -19,6 +21,8 @@ int getfill(){
 }
 
 void spinDisplay(){
+    // update rotation values
+    // and apply them
     xrotate = xrotate + deltax;
     yrotate = yrotate + deltay;
     zrotate = zrotate + deltaz;
@@ -32,6 +36,7 @@ void spinDisplay(){
 }
 
 void reset(){
+    // reset the rotation values
     xrotate = 0;
     yrotate = 0;
     zrotate = 0;
@@ -40,12 +45,16 @@ void reset(){
     deltaz = 0;
 }
 void stoprotating(){
+    // only reset the delta rotation values,
+    // which stops rotation
     deltax = 0;
     deltay = 0;
     deltaz = 0;
 }
 
 void rotation(char axis, int direction){
+    // rotate based on input axis and direction
+    
     // axis is either 'x', 'y', or 'z'
     // direction is either 0 : + or 1 : -
     if(axis == 'x')
@@ -67,8 +76,12 @@ void rotation(char axis, int direction){
 
 
 void drawHouse( struct house *face ){
+    // draws the house from defineHouse.cc,
+    // draws the sign on the house,
+    // and draws the viewport labels
+    
     int i, j;
-
+    char message[] = "HV GOOD BRK!";
     glPolygonMode(GL_FRONT, GL_FILL);
     glPolygonMode(GL_BACK, GL_FILL);
 
@@ -100,13 +113,18 @@ void drawHouse( struct house *face ){
 
     glPopMatrix();
 
+    // draw the sign
     glScalef(face[4].point[0].x/650, face[4].point[1].x/270, face[4].point[2].x/400);
     glRotatef(180.0,0.0,1.0,0.0);
     glTranslatef(-620.0,210.0,-500.0);
     glRotatef(240.0,1.0,0.0,0.0);
-    drawSign();
+    drawSign(message);
     glPopMatrix();
     glPopMatrix();
+    
+    
+    glPopMatrix();
+    glPushMatrix();
     // draw what view type is selected in the top right corner
     if(getviewtype() == 0){
         // perspective selected
@@ -114,7 +132,7 @@ void drawHouse( struct house *face ){
         glScalef(.003,.003,.003);
         glRotatef(40,0,1,0);
         glRotatef(90,0,0,1);
-        glTranslatef(200,4300,0);
+        glTranslatef(200,4300,0);   
         glColor3f(1.0,0.0,1.0);
         char perspective[] = "PERSPECTIVE";
         glRasterPos3f( 500.0f , 500.0f ,0.0f );
@@ -137,6 +155,7 @@ void drawHouse( struct house *face ){
         glPopMatrix();
     }
     else if(getviewtype() == 2){
+        // custom view selected
         glPushMatrix();
         glScalef(.003,.003,.003);
         glRotatef(40,0,1,0);
@@ -149,6 +168,7 @@ void drawHouse( struct house *face ){
             glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, custom[i]);
         glPopMatrix();
     }
+    glPopMatrix();
 
 }
 
