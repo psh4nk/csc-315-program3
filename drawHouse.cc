@@ -59,19 +59,19 @@ void rotation(char axis, int direction){
     // direction is either 0 : + or 1 : -
     if(axis == 'x')
         if(direction == 0)
-            deltax += 1;
+            deltax += .01;
         else if(direction == 1)
-            deltax -= 1;
+            deltax -= .01;
     if(axis == 'y')
         if(direction == 0)
-            deltay += 1;
+            deltay += .01;
         else if(direction == 1)
-            deltay -= 1;
+            deltay -= .01;
     if(axis == 'z')
         if(direction == 0)
-            deltaz += 1;
+            deltaz += .01;
         else if(direction == 1)
-            deltaz -= 1;
+            deltaz -= .01;
 }
 
 
